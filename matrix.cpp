@@ -12,9 +12,12 @@ matrix::matrix(size_t r,size_t c,const std::vector<double>&vec):rows(r),cols(c),
     throw std::invalid_argument("Invalid dimensions");
   }
 };
-
-
-
+double & matrix::operator(size_t r,size_t c){
+  return vals[r*cols+c];
+};
+double matrix::operator(size_t r,size_t c)const{
+  return vals[r*cols+c];
+}; 
 
 int main (){
  return 0;
