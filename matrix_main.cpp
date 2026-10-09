@@ -1,0 +1,25 @@
+#include<iostream>
+#include "matrix.hpp"
+
+matrix::matrix(size_t r,size_t c):rows(r),cols(c),vec(r*c,0){
+  if (r==0||c==0){
+
+    throw std::invalid_argument("Invalid matrix dimension");
+  }
+};
+matrix::matrix(size_t r,size_t c,const std::vector<double>&v):rows(r),cols(c),vec(v){
+  if (r==0||c==0||r*c!=v.size()){
+    throw std::invalid_argument("Invalid matrix dimension");
+  }
+}
+
+
+
+
+
+
+
+
+int main (){
+  return 0;
+}
