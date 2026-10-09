@@ -16,11 +16,12 @@ class matrix {
   //Selection operators:
   double& operator()(size_t r,size_t c);
   double operator()(size_t r,size_t c)const ;
-  /*
+  
   //Scalar operators:
   matrix operator*(double a)const;
   matrix operator+(double a)const;
   matrix operator-(double a)const;
+  /*
   //Matrix operations:
   matrix operator*(matrix &other)const;
   matrix operator+(matrix &other)const;

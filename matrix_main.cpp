@@ -18,9 +18,27 @@ double& matrix::operator()(size_t r,size_t c){
 double matrix::operator()(size_t r,size_t c )const {
   return vec[r*cols+c];
 }
-
-
-
+matrix matrix::operator*(double a)const{
+  std::vector<double>v(rows*cols,0);
+for(size_t i=0;i<v.size();i++){
+  v[i]=vec[i]*a;
+}
+return matrix(rows,cols,v);
+}
+matrix matrix::operator+(double a)const{
+  std::vector<double>v(rows*cols,0);
+  for (size_t i=0;i<v.size();i++){
+    v[i]=vec[i]+a;
+  }
+  return matrix(rows,cols,v);
+}
+matrix matrix::operator-(double a)const{
+ std::vector<double>v(rows*cols,0);
+ for (size_t i=0;i<v.size();i++){
+   v[i]=vec[i]-a;
+ }
+ return matrix(rows,cols,v);
+}
 
 
 
