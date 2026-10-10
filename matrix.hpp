@@ -3,12 +3,11 @@
 
 
 class matrix {
-  private:
-  //Private elements of our matrix class:
+  //elements of our matrix class:
+  public:
   size_t rows;
   size_t cols;
   std::vector<double>vec;
-  public:
   //Constructors:
   matrix(size_t c,size_t r);
   matrix (size_t c,size_t r,const std::vector<double>&vals);
