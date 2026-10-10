@@ -21,10 +21,10 @@ class matrix {
   matrix operator*(double a)const;
   matrix operator+(double a)const;
   matrix operator-(double a)const;
-  /*
+  
   //Matrix operations:
-  matrix operator*(matrix &other)const;
-  matrix operator+(matrix &other)const;
-  matrix operator-(matrix &other)const;
-  */
+  matrix operator*(const matrix &other)const;
+  matrix operator+(const matrix &other)const;
+  matrix operator-(const matrix &other)const;
+  
 };

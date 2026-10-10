@@ -39,7 +39,38 @@ matrix matrix::operator-(double a)const{
  }
  return matrix(rows,cols,v);
 }
-
+matrix matrix::operator*(const matrix &other)const{
+  if (cols!=other.rows){
+    throw std::invalid_argument("Inner dimensions must match!");
+  }
+  std::vector<double>v(rows*cols,0);
+  matrix result=matrix(cols,other.cols,v);
+  for (size_t i=0;i<rows;i++){
+      for(size_t j=0;j<other.cols;j++){
+        for (size_t k=0;cols;k++){
+          result(i,j)+=(*this)(i,k) *other(k,j);
+        }
+      }
+  }
+return result;} 
+matrix matrix::operator-(const matrix &other)const{
+  if (rows!=other.rows||cols!=other.cols){
+    throw std::invalid_argument("Dimensions must match!");
+  }
+  std::vector<double>v(rows*cols,0);
+  for (size_t i=0;i<v.size();i++){
+    v[i]=vec[i]-other.vec[i];
+  }
+  return matrix(rows,cols,v);
+}
+matrix matrix::operator +(const matrix &other)const{
+  if(rows!=other.rows||cols!=other.cols){
+    throw std::invalid_argument("Dimensions must match!");
+  }
+  std::vector<double>v(rows*cols,0);
+  for (size_t i=0;i<v.size();i++){
+    v[i]=vec[i]-other.vec[i]; }
+ return matrix(rows,cols,v); }
 
 
 int main (){
