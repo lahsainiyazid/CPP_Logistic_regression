@@ -26,5 +26,5 @@ class matrix {
   matrix operator*(const matrix &other)const;
   matrix operator+(const matrix &other)const;
   matrix operator-(const matrix &other)const;
-  
+  matrix T()const; 
 };

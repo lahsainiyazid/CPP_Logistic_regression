@@ -72,7 +72,15 @@ matrix matrix::operator +(const matrix &other)const{
     v[i]=vec[i]-other.vec[i]; }
  return matrix(rows,cols,v); }
 
-
+matrix matrix::T()const{
+  std::vector<double>v(rows*cols,0);
+  matrix T=matrix(cols,rows,v);
+  for(size_t i=0;i<rows;i++){
+    for (size_t j=0;j<cols;j++){
+      T(j,i)=(*this)(i,j);
+    }
+  }
+return T;}
 int main (){
   return 0;
 }
