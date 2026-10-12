@@ -88,6 +88,12 @@ matrix matrix::exp()const{
   }
   return matrix(rows,cols,v);
 }
+matrix matrix::sigmoid()const {
+  std::vector<double>v(vec.size());
+  for (size_t i=0;i<vec.size();i++){
+    v[i]=1/(1+std::exp(vec[i]*-1));
+  }
+return matrix(rows,cols,v);}
 int main (){
   return 0;
 }
