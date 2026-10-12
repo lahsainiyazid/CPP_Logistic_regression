@@ -19,7 +19,19 @@ void descentlog::fit(size_t epochs,double alpha){
     double b=b-alpha*db;
   }
 }
-matrix descentlog::predict(){
-  return X*w +b;
+matrix descentlog::predict(double treshhold)const{
+  if (treshhold<0||treshhold>1){
+    throw std::invalid_argument("Treshhold must be >=0 and <=1");
+  }
+  matrix y_pred= X*w +b;
+  for (size_t i;i<y_pred.vec.size();i++){
+    if (y_pred.vec[i]>treshhold){
+      y_pred.vec[i]=1;
+    }
+    else {
+      y_pred.vec[i]=0;
+    }
+  }
+  return y_pred;
 }
 
