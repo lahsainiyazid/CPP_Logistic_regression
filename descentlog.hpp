@@ -9,4 +9,5 @@ class descentlog{
   descentlog(const matrix &X_train,const matrix& y_train);
  void fit (size_t epochs,double alpha);
  matrix predict(double treshhold)const ;
+ matrix predict()const;
 };

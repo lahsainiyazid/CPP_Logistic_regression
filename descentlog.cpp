@@ -25,7 +25,7 @@ matrix descentlog::predict(double treshhold)const{
   }
   matrix y_pred= X*w +b;
   for (size_t i;i<y_pred.vec.size();i++){
-    if (y_pred.vec[i]>treshhold){
+    if (y_pred.vec[i]>=treshhold){
       y_pred.vec[i]=1;
     }
     else {
@@ -34,4 +34,18 @@ matrix descentlog::predict(double treshhold)const{
   }
   return y_pred;
 }
+matrix descentlog::predict()const{
+  double treshhold=0.5;
+  matrix y_pred= X*w +b;
+  for (size_t i;i<y_pred.vec.size();i++){
+    if (y_pred.vec[i]>=treshhold){
+      y_pred.vec[i]=1;
+    }
+    else {
+      y_pred.vec[i]=0;
+    }
+  }
+  return y_pred;
+}
+
 
