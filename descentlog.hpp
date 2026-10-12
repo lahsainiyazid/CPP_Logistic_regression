@@ -6,5 +6,5 @@ class descentlog{
   matrix y;
   matrix w;
   descentlog(const matrix &X_train,const matrix& y_train);
- void fit (int epochs,double alpha); 
+ void fit (size_t epochs,double alpha); 
 };
