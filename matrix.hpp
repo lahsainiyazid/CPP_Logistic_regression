@@ -1,6 +1,6 @@
 #pragma once 
 #include<vector>
-
+#include<cmath>
 
 class matrix {
   //elements of our matrix class:
@@ -26,4 +26,6 @@ class matrix {
   matrix operator+(const matrix &other)const;
   matrix operator-(const matrix &other)const;
   matrix T()const; 
+  //Mathematical operations:
+  void e();
 };

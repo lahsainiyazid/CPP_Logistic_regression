@@ -81,6 +81,11 @@ matrix matrix::T()const{
     }
   }
 return T;}
+void matrix::e(){
+  for (size_t i=0;i<vec.size();i++){
+    vec[i]=exp(vec[i]);
+  }
+}
 int main (){
   return 0;
 }
