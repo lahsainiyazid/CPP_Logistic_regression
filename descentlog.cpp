@@ -19,4 +19,7 @@ void descentlog::fit(size_t epochs,double alpha){
     double b=b-alpha*db;
   }
 }
+matrix descentlog::predict(){
+  return X*w +b;
+}
 
