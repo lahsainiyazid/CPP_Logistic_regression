@@ -81,10 +81,12 @@ matrix matrix::T()const{
     }
   }
 return T;}
-void matrix::e(){
+matrix matrix::exp()const{
+  std::vector<double>v(vec.size(),0);
   for (size_t i=0;i<vec.size();i++){
-    vec[i]=exp(vec[i]);
+    v[i]=std::exp(vec[i]);
   }
+  return matrix(rows,cols,v);
 }
 int main (){
   return 0;

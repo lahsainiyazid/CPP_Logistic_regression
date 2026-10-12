@@ -27,5 +27,6 @@ class matrix {
   matrix operator-(const matrix &other)const;
   matrix T()const; 
   //Mathematical operations:
-  void e();
+ matrix exp()const;
+ matrix sigmoid()const;
 };
