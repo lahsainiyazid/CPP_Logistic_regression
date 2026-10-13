@@ -47,5 +47,18 @@ matrix descentlog::predict()const{
   }
   return y_pred;
 }
+std::vector<double> descentlog::confusion_matrix(const matrix &y_pred)const{
+    if (y.vec.size()!=y_pred.vec.size()){throw std::invalid_argument("Vector sizes do not match!");}
+    std::vector<double>cmvec(7,0.0);
+    for (size_t i=0;i<y_pred.vec.size();i++){
+      if (y.vec[i]==1 && y_pred.vec[i]==1){cmvec[0]++;}//True positive 
+      if (y.vec[i]==1 && y_pred.vec[i]==0){cmvec[1]++;}//False ngeative 
+      if (y.vec[i]==0 && y_pred.vec[i]==1){cmvec[2]++;}//False positive 
+      if (y.vec[i]==0 && y_pred.vec[i]==0){cmvec[3]++;}//True negative 
+    }
+    cmvec[4]=(cmvec[0]+cmvec[3])/(cmvec[0]+cmvec[1]+cmvec[2]+cmvec[3]);//Accuracy 
+    cmvec[5]=(cmvec[0])/(cmvec[0]+cmvec[2]);//Precision 
+    cmvec[6]=2 *(cmvec[4]*cmvec[5])/(cmvec[4]+cmvec[5]);   //Recall 
+  return cmvec;}
 
 

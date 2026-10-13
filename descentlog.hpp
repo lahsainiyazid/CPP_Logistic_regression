@@ -10,4 +10,5 @@ class descentlog{
  void fit (size_t epochs,double alpha);
  matrix predict(double treshhold)const ;
  matrix predict()const;
+ std::vector<double> confusion_matrix(const matrix &y_pred)const;
 };
